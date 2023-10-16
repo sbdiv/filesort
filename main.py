@@ -18,7 +18,7 @@ for cyr, lat in zip(CYRILLIC_SYMBOLS,TRANSLATION):
 
 def normalize(name):
     base, ext = os.path.splitext(name) #розділення на імя та розширення
-    base = re.sub(r'(?![()a-zA-Z0-9])', '_', base.translate(Trans))# переклад імені
+    base = re.sub(r'\W', '_', base.translate(Trans)) # переклад імені
     return f'{base}{ext}' #повернення повного ім'я та розширення
 
 
